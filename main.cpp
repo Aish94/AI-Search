@@ -119,6 +119,14 @@ public:
     }
 }mapping;
 
+//If using A* method return heuristic else return 0
+int h(string state)
+{
+    if(method[0] == 'A')
+        return heuristics[state];
+    return 0;
+}
+
 //Search tree created during the search process
 class tree
 {
@@ -177,14 +185,6 @@ public:
         return final_path;
     }
 }search_tree;
-
-//If using A* method return heuristic else return 0
-int h(string state)
-{
-    if(method[0] == 'A')
-        return heuristics[state];
-    return 0;
-}
 
 //Returns true if it's the goal state
 bool goalTest(string state)
